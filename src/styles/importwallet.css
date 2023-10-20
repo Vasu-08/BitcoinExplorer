@@ -1,0 +1,64 @@
+.wallet-form {
+    background-color: #171C23;
+    width: 800px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+input.wallet-name-input,
+input.mnemonic-input {
+    height: 40px;
+    box-sizing: border-box;
+    width: 450px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: #20242B;
+    color: #fff;
+}
+
+input.mnemonic-input {
+    text-align: start;
+    height: 100px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #DB953C;
+}
+
+.list-container {
+    display: flex;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 5px 20px 20px 0;
+    color: #fff;
+}
+
+.heading {
+    margin: 10%;
+    color: #fff;
+}
+
+.close-button {
+    margin: 20px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 2.6em;
+  }

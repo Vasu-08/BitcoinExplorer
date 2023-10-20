@@ -11,7 +11,9 @@ const WalletSummary = ({name, balance}) => {
         </div>
         <div className='wallet-summary-name-text'>{name}</div>
       </div>
+
       <div className='wallet-summary-balance-amount-text'>BTC {balance}</div>
+
       <div className='trash'>
         <img src={trashIcon} />
       </div>
@@ -20,4 +22,3 @@ const WalletSummary = ({name, balance}) => {
 };
 
 export default WalletSummary;
-
