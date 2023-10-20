@@ -1,0 +1,42 @@
+.wallet-summary-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    height: 55px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #161C23;
+}
+
+.wallet-summary-name {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.wallet-summary-balance-amount-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.wallet-summary-balance-amount-icon img {
+    width: 54px;
+    height: 54px;
+    margin-right: 10px;
+}
+
+.trash img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.wallet-summary-balance-amount-text {
+    margin: 0 auto;
+}
+
+.trash {
+    margin-left: auto;
+}

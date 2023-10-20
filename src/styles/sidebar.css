@@ -1,0 +1,27 @@
+.main {
+    position: relative;
+    width: 290px;
+    height: 80vh;
+    padding: 20px 0px 0px 0px;
+    margin: 0px 50px 50px 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    fill: #161C23;
+    background-color: #161C23;
+    border-radius: 20px;
+}
+
+.support {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4B3C2B;
+    margin-top: auto;
+    border-radius: 20px;
+    width: 100%;
+    height: 12%;
+    bottom: 0;
+    font-size: 24px;
+}
