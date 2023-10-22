@@ -1,0 +1,47 @@
+.tx-container {
+    padding: 20px;
+    border-radius: 10px;
+    width: 1000px;
+    height: 600px;
+    overflow-y: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #1c1c1e; */
+    color: white;
+}
+
+.tx-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
+.sync-button {
+    align-self: flex-end;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    border: none;
+    font-size: 1rem;
+}
+
+.tx-table .tx-table-header,
+.tx-coin-row {
+    display: grid;
+    grid-template-columns: 0.7fr 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+.tx-table .tx-table-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}

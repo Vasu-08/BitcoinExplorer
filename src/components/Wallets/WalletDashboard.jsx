@@ -2,9 +2,11 @@ import {useState} from 'react';
 import '../../styles/walletdashboard.css';
 import WalletSummary from './WalletSummary';
 import ImportWalletForm from './ImportWalletForm';
+import {useWallets} from '../../context/WalletsContext/WalletsContext';
 
 const WalletDashboard = () => {
   const [showModal, setShowModal] = useState(false);
+  const {wallets} = useWallets();
 
   const openModal = () => {
     setShowModal(true);
@@ -43,7 +45,9 @@ const WalletDashboard = () => {
         </div>
 
         <div className='coin-rows'>
-          <WalletSummary name='Vasu' balance={20} />
+          {wallets.map((wallet, index) => (
+            <WalletSummary key={index} name={wallet.name} balance={20} />
+          ))}
         </div>
       </div>
     </div>

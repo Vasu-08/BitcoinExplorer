@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <div className='main'>
       <div className='cards'>
-        <Link to='/wallets'>
+        <Link to='/'>
           <Card image={walletIcon} text='Wallets' />
         </Link>
         <Link to='/transactions'>

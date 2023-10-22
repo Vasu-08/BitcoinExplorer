@@ -1,0 +1,81 @@
+.tableContainer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 55px;
+    width: 1000px;
+    background-color: #161C23;
+    border-radius: 5px;
+    margin: 10px 0px 0px 0px;
+}
+
+.tableRow {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.tableCell {
+    flex: 1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day,
+.time {
+    margin: 1px;
+}
+
+.time {
+    font-weight: 100;
+}
+
+.name {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btc {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btcIcon {
+    width: 54px;
+    height: 54px;
+    margin-right: 10px;
+}
+
+.received {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.receivedLabel {
+    padding: 4px 8px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+}
+
+.status {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00e676;
+}

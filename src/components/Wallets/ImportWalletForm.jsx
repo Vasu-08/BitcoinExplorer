@@ -1,11 +1,14 @@
 import '../../styles/importwallet.css';
 import {useState} from 'react';
+import {useWallets} from '../../context/WalletsContext/WalletsContext';
 
 const ImportWalletForm = ({onClose}) => {
   const [formData, setFormData] = useState({
     walletName: '',
     mnemonicName: ''
   });
+
+  const {fetchWallet} = useWallets();
 
   const {walletName, mnemonicName} = formData;
 
@@ -21,6 +24,7 @@ const ImportWalletForm = ({onClose}) => {
     if (!walletName || !mnemonicName) {
       return alert('Please fill in all fields');
     }
+    fetchWallet(walletName);
   };
 
   return (
