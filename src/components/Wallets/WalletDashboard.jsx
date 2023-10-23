@@ -34,12 +34,12 @@ const WalletDashboard = () => {
       )}
 
       <div className='wallet-header'>
-        <span>Total Coins - 7</span>
+        <span>Total Wallets - {wallets.length}</span>
       </div>
 
       <div className='coin-table'>
         <div className='table-header'>
-          <span>Coin</span>
+          <span>Wallet</span>
           <span>Holding</span>
           <span>Actions</span>
         </div>

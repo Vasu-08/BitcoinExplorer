@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import {createContext, useReducer, useContext} from 'react';
 import axios from 'axios';
 import {ADD_WALLET, SET_WALLETS, SET_BALANCE} from './actionTypes';
@@ -28,7 +29,54 @@ const walletReducer = (state, action) => {
 };
 
 const WalletProvider = ({children}) => {
-  const [wallets, dispatch] = useReducer(walletReducer, []);
+  const [wallets, dispatch] = useReducer(walletReducer, [
+    // {
+    //   'token': '5406b767ab5f4cffbc295350f4e794a0',
+    //   'name': 'Vasu1',
+    //   'hd': true,
+    //   'extended_public_key':
+    //     'tpubDDP15Dhn9t7KY4mao5LsXNsr7H3CCjMHhw3JDhjkGqd1E38vs924fNdLTyzYmHS9dktPduDvfW7a8gjd1EFV2YyY8k2ChcLHHXYcFth88qY',
+    //   'chains': [
+    //     {
+    //       'chain_addresses': [
+    //         {
+    //           'address': 'mo2NhRtmdUJ391zYG5YFkbbz1da7cXkLaR',
+    //           'path': 'm/0'
+    //         },
+    //         {
+    //           'address': 'mnNUVft5x6rzUEGRLZenJBV6JukroJxrsG',
+    //           'path': 'm/1'
+    //         },
+    //         {
+    //           'address': 'mrGnpFNC6bQ9padzADpGQmSxEND1qwS7Zw',
+    //           'path': 'm/2'
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // },
+    // {
+    //   'token': '5406b767ab5f4cffbc295350f4e794a0',
+    //   'name': 'Vasu2',
+    //   'hd': true,
+    //   'extended_public_key':
+    //     'tpubDCUgepukYADG2cRxwkD1fHsY1Z1xKHBA4PvQ8rNU6MDHSc1nHosAKDhESqNLtexEWwS6qv6wNuqBMThmXUNfPExzfob6kPDJVrDWH1JKWrb',
+    //   'chains': [
+    //     {
+    //       'chain_addresses': [
+    //         {
+    //           'address': 'mtkk5R3U4Erdg1T9f8MbEmGtXRPQ3aSmQN',
+    //           'path': 'm/0'
+    //         },
+    //         {
+    //           'address': 'mfXpUk2GcVk2AZHBfcgxqwAbWRHaRyK1eZ',
+    //           'path': 'm/1'
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // }
+  ]);
 
   const fetchWallet = async walletName => {
     try {

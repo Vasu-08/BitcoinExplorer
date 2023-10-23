@@ -10,7 +10,7 @@ const ImportWalletForm = ({onClose}) => {
 
   const {fetchWallet} = useWallets();
 
-  const {walletName, mnemonicName} = formData;
+  const {walletName} = formData;
 
   const onChangeInput = e => {
     setFormData({
@@ -21,7 +21,7 @@ const ImportWalletForm = ({onClose}) => {
 
   const onSubmitHandler = e => {
     e.preventDefault();
-    if (!walletName || !mnemonicName) {
+    if (!walletName) {
       return alert('Please fill in all fields');
     }
     fetchWallet(walletName);
@@ -46,7 +46,7 @@ const ImportWalletForm = ({onClose}) => {
           />
         </div>
 
-        <div className='input-container'>
+        {/* <div className='input-container'>
           <label>Enter your Mnemonic </label>
           <input
             className='mnemonic-input'
@@ -55,7 +55,7 @@ const ImportWalletForm = ({onClose}) => {
             onChange={onChangeInput}
             name='mnemonicName'
           />
-        </div>
+        </div> */}
 
         <button className='button-container'>
           <input type='submit' />

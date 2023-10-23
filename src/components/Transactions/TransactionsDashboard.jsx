@@ -4,7 +4,7 @@ import {useTransactions} from '../../context/TransactionsContext/TransactionsCon
 import {useWallets} from '../../context/WalletsContext/WalletsContext';
 
 const TransactionsDashboard = () => {
-  const {transactions, fetchTransactions} = useTransactions();
+  const {transactions, fetchTransactions, isSyncing} = useTransactions();
   const {wallets} = useWallets();
 
   fetchTransactions(wallets);
@@ -37,10 +37,16 @@ const TransactionsDashboard = () => {
 
   return (
     <div className='tx-container'>
-      <button className='sync-button'>Sync</button>
+      {
+        isSyncing ? (
+          <div className='spinner'></div>
+        ) : (
+          <div className='synced-icon'>Synced</div>
+        )
+      }
 
       <div className='tx-header'>
-        <span>Total Transactions - 03</span>
+        <span>Total Transactions - {transformed.length}</span>
       </div>
 
       <div className='tx-table'>

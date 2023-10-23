@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import axios from 'axios';
 import {createContext, useContext, useState} from 'react';
 import {TRANSACTIONS_API_URL} from '../../utils/api/apiURL';
@@ -10,6 +11,11 @@ export const useTransactions = () => {
 
 const TransactionsProvider = ({children}) => {
   const [transactions, setTransactions] = useState([]);
+  const [isSyncing, setIsSyncing] = useState(false);
+
+  const toggleSyncing = () => {
+    setIsSyncing(!isSyncing);
+  };
 
   const fetchTransactionsForAddress = async (address, walletName) => {
     const url = `${TRANSACTIONS_API_URL}${address}/full`;
@@ -24,24 +30,34 @@ const TransactionsProvider = ({children}) => {
   const fetchTransactions = async wallets => {
     const allTransactions = [];
 
-    for (const wallet of wallets) {
-      const walletName = wallet.name;
+    try {
+      for (const wallet of wallets) {
+        const walletName = wallet.name;
 
-      for (const chain of wallet.chains) {
-        const chainAddressesPromises = chain.chain_addresses.map(
-          chain_address => fetchTransactionsForAddress(chain_address.address, walletName)
-        );
-
-        const chainResults = await Promise.all(chainAddressesPromises);
-        allTransactions.push(...chainResults.flat());
+        for (const chain of wallet.chains) {
+          for (const chain_addresse of chain.chain_addresses) {
+            const address = chain_addresse.address;
+            const transactions = await fetchTransactionsForAddress(
+              address,
+              walletName
+            );
+            allTransactions.push(...transactions);
+          }
+        }
       }
-    }
 
-    setTransactions(allTransactions);
+      setTransactions(allTransactions);
+    } catch (error) {
+      console.error('Error fetching transactions:', error);
+    } finally {
+      toggleSyncing();
+    }
   };
 
   return (
-    <TransactionsContext.Provider value={{transactions, fetchTransactions}}>
+    <TransactionsContext.Provider
+      value={{transactions, fetchTransactions, isSyncing, toggleSyncing}}
+    >
       {children}
     </TransactionsContext.Provider>
   );
